@@ -2,36 +2,44 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+            rel="stylesheet"
+        />
+        <title>Natural language processing</title>
     </head>
 
     <body>
 
         <header>
             <div class="">
-                Logo
+               <img src="../../../assets/moods.jpg" class="logo" alt="moods">
             </div>
-            <div class="">
+            <div class="nunito">
                 navigation
             </div>
         </header>
 
         <main>
             <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                <form class="nunito" onsubmit="return Client.handleSubmit(event)">
+                    <label for="feeling">Sentiment Analysis</label>
+                    <input id="name" class="nunito" type="text" name="input" value="" placeholder="type URL or text">
+                    <input type="submit" class="nunito" name="submit" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
 
-            <section>
+            <section class="nunito">
                 <strong>Form Results:</strong>
                 <div id="results"></div>
             </section>
         </main>
 
-        <footer>
-            <p>This is a footer</p>
+        <footer  class="footer-container bg-footer nunito">
+            <p class="text-base">
+                <i>Copyright 2020 - Fourth Project Of My Nanodegree - Udacity</i>
+              </p>
         </footer>
 
     </body>

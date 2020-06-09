@@ -1,17 +1,53 @@
-function handleSubmit(event) {
+const handleSubmit = (event) => {
   event.preventDefault();
 
-  // check what text was put into the form field
-  let formText = document.getElementById("name").value;
-  Client.checkForName(formText);
+  // check what type of text was put into the form field
+  const formText = document.getElementById("name").value;
+  const objectData = Client.checkForName(formText);
 
-  console.log("::: Form Submitted :::");
-  /*fetch("http://localhost:8080/test")
+  fetch(
+    `http://localhost:3000/api/feeling?mode=${objectData.mode}&value=${objectData.value}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  )
     .then((res) => res.json())
-    .then(function (res) {
-      document.getElementById("results").innerHTML = res.message;
-    });*/
-  document.getElementById("results").innerHTML = "Fetch successful!";
-}
+    .then((res) => {
+      saveData(res.respond);
+    })
+    .catch((err) => console.log("handleSubmit Error:", err));
+};
 
-export { handleSubmit };
+const saveData = (dataObject) => {
+  fetch("http://localhost:3000/api/feeling", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(dataObject),
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      if (res.ok) {
+        updateUI(res.respond);
+      }
+    })
+    .catch((err) => console.log("saveData Error:", err));
+};
+
+const updateUI = (response) => {
+  cleanForm();
+  const newP = document.createElement("p");
+  newP.textContent = `text: ${response.text} | polarity: ${response.polarity} | polarity_confidence: ${response.polarity_confidence} | subjectivity: ${response.subjectivity} | subjectivity_confidence: ${response.subjectivity_confidence}`;
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.appendChild(newP);
+};
+
+const cleanForm = () => {
+  document.getElementById("name").value = "";
+};
+
+export { handleSubmit, saveData };

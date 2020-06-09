@@ -15,7 +15,7 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 //Enable CORS
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
@@ -25,8 +25,8 @@ app.use(function (req, res, next) {
 });
 
 //EndPoint
-const weatherUser = require("./weatherUser");
-app.use("/api/weatherUser", weatherUser);
+const feeling = require("./feeling");
+app.use("/api/feeling", feeling);
 
 //Public Folder
 app.use(express.static(publicPath));

@@ -8,4 +8,7 @@ import "./css/form.scss";
 import "./css/footer.scss";
 import "./css/header.scss";
 
+// Importing image files
+import "../../../assets/moods.jpg";
+
 export { checkForName, handleSubmit };
