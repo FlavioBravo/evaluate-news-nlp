@@ -5,6 +5,15 @@ const router = express.Router();
 // Setup empty JS object to act as API endpoint
 const projectData = require("fs");
 
+// Require the Aylien Package
+var AYLIENTextAPI = require("aylien_textapi");
+
+// Setup Aylien API Credentias
+const textapi = new AYLIENTextAPI({
+  application_id: process.env.API_ID,
+  application_key: process.env.API_KEY,
+});
+
 // Get weatherUserDataList
 router.get("/", function (req, res) {
   const weatherUserDataList = require("./db.json");

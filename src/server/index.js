@@ -1,3 +1,7 @@
+// dotenv - loads environment variables from a .env file
+const dotenv = require("dotenv");
+dotenv.config();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");

@@ -1,7 +1,11 @@
 import { checkForName } from "./js/nameChecker";
 import { handleSubmit } from "./js/formHandler";
 
-console.log(checkForName);
+// Importing SASS files
+import "./css/resets.scss";
+import "./css/base.scss";
+import "./css/form.scss";
+import "./css/footer.scss";
+import "./css/header.scss";
 
-alert("I EXIST");
-console.log("CHANGE!!");
+export { checkForName, handleSubmit };
