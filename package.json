@@ -1,0 +1,37 @@
+{
+  "name": "evaluate-news-nlp",
+  "version": "1.0.0",
+  "description": "Fourth project of my nanodegree",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server/index.js",
+    "build-prod": "webpack --config webpack.prod.js",
+    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlavioBravo/evaluate-news-nlp.git"
+  },
+  "keywords": [],
+  "author": "Flavio Bravo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlavioBravo/evaluate-news-nlp/issues"
+  },
+  "homepage": "https://github.com/FlavioBravo/evaluate-news-nlp#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
