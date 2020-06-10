@@ -9,6 +9,6 @@ import "./css/footer.scss";
 import "./css/header.scss";
 
 // Importing image files
-import "../../../assets/moods.jpg";
+import "../../assets/moods.jpg";
 
 export { checkForName, handleSubmit };

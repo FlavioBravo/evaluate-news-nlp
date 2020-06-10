@@ -5,6 +5,12 @@ const handleSubmit = (event) => {
   const formText = document.getElementById("name").value;
   const objectData = Client.checkForName(formText);
 
+  if (formText === "") {
+    alert("all fields should be completed");
+    evt.preventDefault();
+    return;
+  }
+
   fetch(
     `http://localhost:3000/api/feeling?mode=${objectData.mode}&value=${objectData.value}`,
     {
