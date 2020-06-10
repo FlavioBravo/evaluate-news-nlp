@@ -11,15 +11,12 @@ const handleSubmit = (event) => {
     return;
   }
 
-  fetch(
-    `http://localhost:3000/api/feeling?mode=${objectData.mode}&value=${objectData.value}`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  )
+  fetch(`api/feeling?mode=${objectData.mode}&value=${objectData.value}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
     .then((res) => res.json())
     .then((res) => {
       saveData(res.respond);
@@ -28,7 +25,7 @@ const handleSubmit = (event) => {
 };
 
 const saveData = (dataObject) => {
-  fetch("http://localhost:3000/api/feeling", {
+  fetch("api/feeling", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

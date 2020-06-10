@@ -1,1 +1,1 @@
-[]
+[{"_id":"1","polarity":"positive","subjectivity":"subjective","text":"flavio is a good boy","polarity_confidence":0.635118305683136,"subjectivity_confidence":0.9997866439180344},{"_id":"2","polarity":"positive","subjectivity":"unknown","text":"fabrcio is a bad boy","polarity_confidence":0.4508132338523865,"subjectivity_confidence":0},{"_id":"3","polarity":"neutral","subjectivity":"subjective","text":"fiorella is a busy girl","polarity_confidence":0.5857328176498413,"subjectivity_confidence":0.7257624772181359}]

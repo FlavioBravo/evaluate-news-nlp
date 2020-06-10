@@ -9,4 +9,11 @@ form {
     line-height: 16px;
     margin: 10px 0;
   }
+
+  .btn {
+    cursor: pointer;
+    &:hover {
+      background: #393939;
+    }
+  }
 }
